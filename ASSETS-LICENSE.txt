@@ -1,0 +1,25 @@
+2515240104 — 素材授权说明
+
+一、表面纹理（Poly Haven，CC0 1.0 公共领域，可商用、无需署名）
+- painted_plaster_wall — 展厅墙面与天花板
+  https://polyhaven.com/a/painted_plaster_wall
+- concrete_floor_worn_001 — 展厅地面
+  https://polyhaven.com/a/concrete_floor_worn_001
+纹理经 Blender 以世界坐标三向投影重新铺设，并与建筑几何一同进行 Cycles 光照烘焙，
+最终以图集贴图形式内嵌于 models/hall.glb。
+
+二、商品图片
+六件女装图片由 Seedream 生成，用于本站商品展示，本地存放于 img/ 与模型贴图中。
+
+三、开源代码与字体
+- Three.js r158 及 GLTFLoader、BufferGeometryUtils：MIT License
+  为支持双击 HTML 直接打开（file:// 协议下浏览器禁止 ES 模块与本地 fetch），
+  这三个文件由 build/make_classic.py 从官方 ES 模块版转换为等价普通脚本，
+  代码内容未作修改，仅改变模块包装方式。
+- Instrument Serif：SIL Open Font License 1.1
+  字体已以 base64 内嵌进 css/style.css，避免 file:// 下的跨源字体限制。
+
+四、双击打开
+- index.html 在 file:// 下会自动加载 js/hall-model.js（模型的 base64 版本），
+  因此无需启动本地服务器；通过 HTTP 访问时则直接读取 models/hall.glb。
+  两种方式功能一致，页面运行时不请求任何外部域名。

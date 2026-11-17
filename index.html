@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#efede9">
+  <meta name="description" content="2515240104 · 静默之间。三间展厅、六件作品，用左右与滚轮逐一查看。">
+  <title>2515240104 — 静默之间</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <script>document.documentElement.classList.add('js');</script>
+  <div class="loader" id="loader" role="status" aria-live="polite">
+    <div class="loader__mark">2515240104<span>ATELIER · 2026</span></div>
+    <p class="loader__poem">The quiet between<br><em>light and cloth.</em></p>
+    <p class="loader__caption">光与布料之间，留一处安静。</p>
+    <div class="loader__track"><span id="loadBar"></span></div>
+    <span class="loader__number" id="loadPercent">0%</span>
+  </div>
+
+  <header class="site-header">
+    <a class="wordmark" href="index.html">2515240104<span>WOMENSWEAR ATELIER</span></a>
+    <nav class="header-nav" aria-label="主导航">
+      <a href="products.html">全部作品</a>
+      <a class="bag-link" href="cart.html">购物袋 <span data-bag-count>0</span></a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="stage-section" aria-label="作品展厅">
+      <figure class="stage-figure">
+        <div class="stage" id="stage">
+          <div id="scene" class="scene" role="img" aria-label="浅色石灰墙展厅。左右切换展厅，滚轮靠近作品，点击衣服查看详情。">
+            <noscript><img class="scene-fallback" src="img/coat-camel.jpg" alt="时光羊毛长大衣，浅驼色长款廓形"></noscript>
+          </div>
+          <div class="stage-veil" id="stageVeil" aria-hidden="true"></div>
+          <div class="stage-top" aria-hidden="true">
+            <span class="stage-room" id="stageRoom">01 柔软的轮廓</span>
+          </div>
+          <div class="stage-meter" aria-live="polite">
+            <span id="shotIndex">04</span><i>/</i><span>09</span>
+          </div>
+          <button class="stage-arrow stage-arrow--prev" id="prevShot" type="button" aria-label="上一个展厅">←</button>
+          <button class="stage-arrow stage-arrow--next" id="nextShot" type="button" aria-label="下一个展厅">→</button>
+          <div class="stage-buy" id="stageBuy" hidden>
+            <div class="stage-buy__info"><span id="buyName">作品</span><span id="buyPrice">¥0</span></div>
+            <button class="stage-buy__add" id="buyAdd" type="button">加入购物袋 ＋</button>
+            <a class="stage-buy__link" id="buyLink" href="product.html">细节 ↗</a>
+          </div>
+          <button class="stage-back" id="stageBack" type="button" hidden>← 退回门口</button>
+        </div>
+        <figcaption class="stage-hint" id="stageHint">左右切换展厅 · 滚轮靠近作品 · 点击衣服查看详情</figcaption>
+      </figure>
+    </section>
+
+    <section class="editorial" aria-labelledby="editorialTitle">
+      <div class="editorial-head">
+        <div class="editorial-copy">
+          <p class="eyebrow">A study in stillness · 001</p>
+          <p class="editorial-lead">六件作品停在三间展厅里，各占一面墙。我们不给它们配背景音乐，也不催你看完——你可以只走近其中一件，看清它的缝线，再决定要不要带走。</p>
+        </div>
+        <h1 id="editorialTitle">静默<em>之间</em></h1>
+      </div>
+      <div class="editorial-grid">
+        <article><h2>材质</h2><p>双面羊毛、十九姆米桑蚕丝、长绒棉与二十六支羊绒。只选会随穿着变软的面料，不做只适合挂在衣架上的衣服。</p></article>
+        <article><h2>廓形</h2><p>微落肩、直筒与斜裁。留出身体的余地，让衣服跟随动作，而不是约束动作。</p></article>
+        <article><h2>工艺</h2><p>双面羊毛手工缝边、半麻衬西装、天然贝壳扣。所有看不见的地方，仍按看得见的标准做。</p></article>
+      </div>
+      <div class="editorial-foot">
+        <a class="button button--dark" href="products.html">查看全部六件作品 <span>→</span></a>
+        <p>西安 · 二〇二六秋冬</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><span>Wear the quiet.</span><span>天然材质 · 松弛轮廓 · 二〇二六秋冬</span><span>© 2515240104</span></footer>
+
+  <dialog class="product-drawer" id="productDrawer" aria-labelledby="drawerName">
+    <button class="drawer-close" id="drawerClose" type="button" aria-label="关闭商品详情">×</button>
+    <figure class="drawer-image"><img id="drawerImage" src="img/coat-camel.jpg" alt=""></figure>
+    <div class="drawer-content"><p class="eyebrow" id="drawerRoom"></p><h2 id="drawerName"></h2><p class="drawer-price" id="drawerPrice"></p><p id="drawerDescription"></p>
+      <label for="drawerSize">选择尺码</label><select id="drawerSize"><option>XS</option><option>S</option><option selected>M</option><option>L</option></select>
+      <button class="button button--dark" id="drawerAdd" type="button">加入购物袋 <span>＋</span></button>
+      <a class="text-link" id="drawerLink" href="product.html">查看作品细节 <span>↗</span></a>
+    </div>
+  </dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <noscript><div class="noscript-note">虚拟展厅需要 JavaScript。你仍可浏览<a href="products.html">全部作品</a>，或<a href="cart.html">查看购物袋</a>。</div></noscript>
+  <script src="js/lib/three.js"></script>
+  <script src="js/lib/buffer-geometry-utils.js"></script>
+  <script src="js/lib/gltf-loader.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/gallery.js"></script>
+</body>
+</html>
